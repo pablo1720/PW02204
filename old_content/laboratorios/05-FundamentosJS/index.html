@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+    <link rel="icon" href="../../assets/images/icons/web.png">
+    
+    <title>JavaScript</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/funciones-en-javascript-t1.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#intro">Introducción</a><i class="fas fa-star-of-life"></i></li>
+                        <li><a href="#var">Variables</a><i class="fas fa-times"></i></li>
+                        <li><a href="#nested">Anidación</a><i class="fas fa-baby"></i></li>
+                        <li><a href="#andOperator">Operador &</a><i class="fas fa-user-tie"></i></li>
+                        <li><a href="#mixin">Mixins</a><i class="fas fa-recycle"></i></li>
+                        <li><a href="#operations">Operaciones aritméticas</a><i class="fas fa-calculator"></i></li>
+                        <li><a href="#modules">Módulos externos</a><i class="fas fa-boxes"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 05.</h1>
+                <h3>23 - 27 de septiembre de 2019.</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>JavaScript</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Lenguaje orientado al desarrollo web</h5>
+            </div>
+        </header>
+
+        <section id="intro">
+            <h3>
+                Introducción
+            </h3>
+
+            <p>
+                JavaScript es un lenguaje de programación interpretado, orientado a objetos, basado en prototipos, débilmente tipado, dinámico e imperativo. Se conoce como el lenguaje Script por excelencia para la parte del cliente de un sitio web permitiendo aspectos y elementos dinámicos y mejoras en la <abbr title="User Experience">UX</abbr>; aunque este no se limita solo a estos aspectos ya que puede ser utilizado en otros ambientes como servidores, microcontroladores, etc.
+            </p>
+
+            <p>
+                JavaScript está implementado bajo el estándar ECMAScript. Esta especificación define las bases de un lenguaje débilmente tipado, y basado en el uso de prototipos y pseudo-clases. Su mayor función es unificar los lenguajes basados en Scripting bajo un mismo campo de aplicación o estándar. 
+            </p>
+
+            <p>
+                JavaScript es multi-paradigma, siendo sus pricipales vertientes la programación funcional, programación imperativa y el paradigma orientado a objetos. La sintaxis básica del mismo es similar a Java y C++, con el fin de minimizar su curva de aprendizaje; sentencias como <em>if, try...catch, for, while y switch</em>, funcionan de forma similar como lo hacen en dichos lenguajes.
+            </p>
+
+            <p>
+                <blockquote style="text-align: justify">
+                    "JavaScript no debe ser confundido con el lenguaje de programación Java. Ambos "Java" y "Javascript" son marcas registradas de Oracle en Estados Unidos y otros países. Sin embargo, los dos lenguajes de programación tienen muchas diferencias en las sintaxis, semántica y usos."
+                </blockquote>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript' target = '_blank'>JavaScript</a>
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='https://thedevs.network/static/img/posts/you-have-been-using-console-wrong-the-whole-time.jpg' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <h4>
+                Primeros pasos.
+            </h4>
+
+            <p>
+                Para empezar a hacer uso de esta herramienta, se debe importar o definir el script dentro del documento HTML. Para ello existen diversas formas:
+            </p>
+
+            <ul>
+                <li>
+                    <h4>
+                        Script embebido en las etiquetas.
+                    </h4>
+
+                    <p>
+                        Como su nombre indica, este método consiste en definir el script dentro de los atributos que controlan los eventos de una etiqueta. Cabe mencionar que esto se debe de evitar, a menos que se quisiera invocar una función externa en cierto evento específico.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;span onclick = "alert('Hice click');"&gt;
+        Haz click aqui!
+    &lt;/span&gt;
+                        </code>
+                    </pre>
+                </li>
+
+                <li>
+                    <h4>
+                        Uso de la etiqueta Script.
+                    </h4>
+
+                    <p>
+                        Dentro de HTML existe una etiqueta específica para la definición de scripts, la cual puede ser embebida en cualquier punto del documento. Esta se ejecutará en el momento en que es definida.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;script&gt;
+        //Imprimir en consola.
+
+        console.log("Hello World!")
+
+    &lt;/script&gt;
+                        </code>
+                    </pre>
+                </li>
+
+                <li>
+                    <h4>
+                        Uso de archivos externos
+                    </h4>
+
+                    <p>
+                        Generalmente los scripts son definidos en archivos externos (con extención .js). Para aplicarlos, se debe de hacer uso del atributo src de la etiquta script, donde se indica la dirección relativa del archivo.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;script src=&quot;assets/js/javaScript.js&quot;&gt;&lt;/script&gt;
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+
+            <div class="tip">
+                <h3>
+                    Estructura de archivos.
+                </h3>
+
+                <p>
+                    A este punto ya se han abarcado varias temáticas que requieren el uso de archivos externos (CSS, SCSS, JS), por lo que es recomendable hacer uso de una organización de directorios y archivos para mantener el orden dentro de la estructura del sitio web. Por ejemplo:
+                </p>
+
+                <ul>
+                    <li>
+                        root
+
+                        <ul>
+                            <li>
+                                index.html
+                            </li>
+                            <li>
+                                assets
+                                <ul>
+                                    <li>
+                                        css
+
+                                        <ul>
+                                            <li>
+                                                styles.css
+                                            </li>
+                                            <li>
+                                                extras.css
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        scss
+
+                                        <ul>
+                                            <li>
+                                                styles.scss
+                                            </li>
+                                            <li>
+                                                _variables.scss
+                                            </li>
+                                            <li>
+                                                _mixins.scss
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        js
+
+                                        <ul>
+                                            <li>
+                                                main.js
+                                            </li>
+                                            <li>
+                                                nav_animation.js
+                                            </li>
+                                            <li>
+                                                jquery.js
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        images
+
+                                        <ul>
+                                            <li>
+                                                imagen1.jpg
+                                            </li>
+                                            <li>
+                                                imagen2.png
+                                            </li>
+                                            <li>
+                                                imagen3.gif
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="var">
+            <h3>
+                Variables.
+            </h3>
+
+            <p>
+                En primer lugar, se debe comprender que una variable es un contenedor para algún valor cualquiera a utilizar; este podría ser un número, una cadena de texto, un estado booleano, etc. La característica pricipal de las variables es que este valor contenido puede cambiar durante el tiempo de ejecución.
+            </p>
+
+            <p>
+                Otra característica importante acerca de estas estructuras, es que ellas no solo almacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dado a lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
+            </p>
+
+            <h4>
+                Declaración de una variable.
+            </h4>
+
+            <p>
+                Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabras reservadas <em>var</em> o <em>let</em> seguido de un identificador o nombre para la misma.
+            </p>
+
+            <pre>
+                <code class="js">
+    var birthDate;
+    let viewHolder;
+    var contAux;
+    let progWeb;
+                </code>
+            </pre>
+
+            <h4>
+                Inicializar una variable.
+            </h4>
+
+            <p>
+                Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico.
+            </p>
+
+            <pre>
+                <code class="js">
+    birthDate = '2018-09-21';
+    contAux = 0;
+    comp2 = true //Global
+    progWeb = "Este es el labo 05";
+                </code>
+            </pre>
+
+            <p>
+                Además se puede Inicializar una variable mientras la declaramos.
+            </p>
+
+            <pre>
+                <code class="js">
+    let offsetX= 45;
+    let offsetY= 12;
+    let volInit = 2;
+                </code>
+            </pre>
+
+            <h4>
+                Operar variables.
+            </h4>
+
+            <p>
+                De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !=), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito.
+            </p>
+
+            <pre>
+                <code class="js">
+    offsetX = 54 + posX;
+    impuestos = valor * 1.13;
+    total = total + impuestos;
+    contAux = contAux + 1;
+    comp2 = aux1 &lt;= aux2;
+                </code>
+            </pre>
+
+            <h4>
+                Diferencia entre <em>let</em> y <em>var</em>.
+            </h4>
+
+            <p>
+                La diferencia fundamental entre ambas instruciones, es el alcance que otorgan a las variables. La instrucción let limita el contexto de la variable al bloque, declaración, sentencia o expresión en que se este utilizando. Por ejemplo:
+            </p>
+
+            <pre>
+                <code class="js">
+    let total = 0;
+    for(i=0; i&lt;5; i++){
+    
+      let sqrtValue = i*i;
+      total = total + sqrtValue;
+    
+    }
+                </code>
+            </pre>
+
+            <p>
+                La variable sqrtValue solamente puede ser accesible desde el contexto encerrado en el bucle for. Si tratamos de acceder a esta fuera de su contexto, será disparado un error.
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/let_error.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Por su parte la instrucción var limita la variable a un contexto local dentro de una función sin importar el contexto particular del bloque o sentencia en la que se esté utilizando. Aplicando el mismo ejemplo anterior con <em>var</em>:
+            </p>
+
+            <pre>
+                <code class="js">
+    let total = 0;
+    for(i=0; i&lt;5; i++){
+    
+      var sqrtValue = i*i;
+      total = total + sqrtValue;
+    
+    }
+                </code>
+            </pre>
+
+            <p>
+                Ahora la variable sqrtValue pertence al contexto de la función y no al bloque <em>for</em>, por lo que se puede acceder a ella desde otro contexto dentro de la misma función.
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/var_ex.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <div class="tip">
+                <h3>
+                    Nombres de variables.
+                </h3>
+
+                <p>
+                    A la hora de elegir un identificador para las variables se debe de garantizar que este cumpla su función de la mejor manera. Para ello se recomeinda seguir los siguientes estándares:
+                </p>
+
+                <ol>
+                    <li>
+                        Ultilizar solamente carateres alfanuméricos (A-Z a-z 0-9) y el guión bajo.
+                    </li>
+                    <li>
+                        Evitar guión bajo al inicio del identificador. Está reservado en JS.
+                    </li>
+                    <li>
+                        No inciar el identificador con un número. Causará error.
+                    </li>
+                    <li>
+                        Usar nombres representativos para las variables, según el contenido que almacenan.
+                    </li>
+                    <li>
+                        Usar minuscula en la primera letra. Si es una composición de varias palabras, escribirlas juntas y aplicar mayúsculas a las primeras letras de cada una (Ej: contAux).
+                    </li>
+                    <li>
+                        Tener preacución ya que los identificadores son "key-sensitive".
+                    </li>
+                    <li>
+                        No utilizar palabras reservadas como identificadores.
+                    </li>
+                </ol>
+
+                <div class="good">
+                    <ul>
+                        <li>
+                            myVariable
+                        </li>
+                        <li>
+                            age
+                        </li>
+                        <li>
+                            init
+                        </li>
+                        <li>
+                            gameInit4
+                        </li>
+                        <li>
+                            cont_aux
+                        </li>
+                    </ul>
+                </div>
+                <div class="wrong">
+                    <ul>
+                        <li>
+                            MyAge
+                        </li>
+                        <li>
+                            myage
+                        </li>
+                        <li>
+                            99var
+                        </li>
+                        <li>
+                            _initvar
+                        </li>
+                        <li>
+                            let
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables' target = '_blank'>Variables</a>
+            </p>
+        </section>
+
+        <section id="sentecias">
+            <h3>
+                Sentencias
+            </h3>
+
+            <p>
+                Como se mecionó previamente, la sintaxis de JavaScript es muy parecida a la de lenguajes de programación comunes, por lo que es natural pensar que la mayoría de sus sentencias son iguales. A continuación se presenta la sintaxis de las mas utilizadas:
+            </p>
+
+            <h4>
+                Condiciones <em>if...else</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    if(condition){
+      //Code Block
+    }else{
+      //Code Block.
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Condiciones <em>switch</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    switch(variable){
+      case value1:
+        //Code Block
+        break;
+      default:
+        //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>for</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    for(i=0; i&lt;n; i++){
+      //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>while</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    while(condition){
+      //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>do-while</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    do{
+      //Code Block
+    }while(condition);
+                </code>
+            </pre>
+
+            <h4>
+                <em>try-catch</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    try{
+      //Code Block
+    }catch(err){
+      //Code Block
+    }
+                </code>
+            </pre>
+
+        </section>
+
+        <section id="funct">
+            <h3>
+                Funciones
+            </h3>
+
+            <p>
+                En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el cuerpo. Se pueden pasar valores a una función, y la función puede devolver un valor. [MDN]
+            </p>
+
+            <p>
+                En JavaScript existen diversas formas de declarar una función, entre las que figuran:
+            </p>
+
+            <h4>
+                La instrucción function
+            </h4>
+
+            <p>
+                Esta instrucción declara una función con un identificador y parámetros específicos. Posee la siguiente sintaxis:
+            </p>
+
+            <pre>
+                <code class="js">
+    function &lt;name&gt; ([Param1,[Param2,[Param3[,...]]]]){
+
+      //instructions
+    
+    }
+                </code>
+            </pre>
+
+            <h4>
+                El operador function
+            </h4>
+            
+            <p>
+                Este operador es parecido a la instrucción anterior, con la diferencia que este es utilizado para declarar funciones dentro de expresiones, es decir ser almacendas en variables o procesos mayores. Su sintaxis es la siguiente:
+            </p>
+            
+            <pre>
+                <code class="js">
+    function [name] ([Param1,[Param2,[Param3[,...]]]]){ 
+        //instructions 
+    }
+                </code>
+            </pre>
+
+            <p><em>
+                Ejemplos:
+            </em></p>
+
+            <pre>
+                <code class="js">
+    var procesoA =  function (i,j){ 
+        return i*j; 
+    }
+
+    elementX.onclick(function (i,j){ 
+        return (i*j)/(i); 
+    });
+                </code>
+            </pre>
+
+            <h4>
+                La notación flecha.
+            </h4>
+
+            <p>
+                Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue implementada a partir de ECMAScript 6. 
+            </p>
+
+            <pre>
+                <code class="js">
+    ([Param1,[Param2[,...]]]) => {
+        //instructions 
+    }
+                </code>
+            </pre>
+
+            <p>
+                Aplicando esta notación a los ejemplos anteriores:
+            </p>
+
+            <pre>
+                <code class="js">
+    var procesoA = (i,j) => { 
+        return i*j; 
+    }
+
+    elementX.onclick((i,j) => { 
+        return (i*j)/(i); 
+    });
+                </code>
+            </pre>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones' target = '_blank'>Funciones</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function' target = '_blank'>Sentencia function</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/function' target = '_blank'>Operador function</a>
+            </p>
+        </section>
+
+        <section id="object">
+            <h3>
+                Objetos
+            </h3>
+
+            <p>
+                Como se había mencionado con anterioridad JavaScript es un lenguaje Orientado a Objetos, por lo el manejo de instancias y objetos no es ajeno a él. Un dato de tipo object, representa una colección de atributos y propiedades arbitrarias que tienen un valor específico. Normalmente, los objetos se almacenan dentro de variables, desde las cuales se puede acceder al valor de cada uno de sus atributos.
+            </p>
+
+            <p>
+                La sintaxis básica para definir un objeto es la siguiente:
+            </p>
+
+            <pre>
+                <code class="js">
+    &lt;var|let&gt; &lt;identificador&gt; = {
+
+      &lt;identificador1&gt;: &lt;valor&gt;[,
+      &lt;identificador2&gt;: &lt;valor&gt;[,
+      &lt;identificador3&gt;: &lt;valor&gt;[,
+      ...]]]
+    
+    };
+                </code>
+            </pre>
+
+            <p>
+                Algunos ejemplos de definiciones de objetos:
+            </p>
+
+            <pre>
+                <code class="js">
+    var carro1 = {
+
+      marca: "Toyota",
+      modelo: "Corolla",
+      annio: 2003
+    
+    };
+                </code>
+            </pre>
+
+            <pre>
+                <code class="js">
+    var player = {
+
+      name: "Antar'kl",
+      HP: 200,
+      Exp: 200015
+    
+    };
+                </code>
+            </pre>
+
+            <p>
+                Esto implica que las llaves tienen dos significados en JavaScript. Al comienzo de una sentencia (como for, while, function, etc), representan un bloque de declaraciones. En cualquier otra posición, describen un objeto.
+            </p>
+
+            <p>
+                Una vez definido un objeto, se puede acceder al valor de sus atributos mediante el operador punto (.); cabe resaltar que en caso de no estar declarado algún atributo al que se trate de acceder, este retornará indefinido.
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/object_example.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Además los atributos de los objetos no solo pueden almacenar datos primitivos, sino que también son capaces de guardar estructuras de datos mas complejas como arreglos, funciones, o inclusos otros objetos.
+            </p>
+
+            <pre>
+                <code class="js">
+    var player = {
+
+      name: "Antar'kl",
+      HP: 200,
+      exp: 200015,
+      Hab: ["Inifugo", "Robustez", "Levitacion"],
+      Attack: {
+        primary:"Llamarada Intensa",
+        aux:"Golpe rapido"
+      },
+      ejecutar: (attk)=>{
+        console.log("Ataque: "+attk);
+      }
+    
+    };
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/Object_comp.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                A partir de esto, se pueden realizar caulquier tipo de operación o sentencia con los objetos con sus respectivos atributos y funciones.
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos' target = '_blank'>Trabajando con objetos</a>
+            </p>
+        </section>
+
+        <section id="classes">
+            <h3>
+                Clases
+            </h3>
+
+            <p>
+                Recordando algunos conceptos, sabemos que una clase es un modelo que define un conjunto de variables, estados, y métodos apropiados para definir el comportamiento de cierta estructura de datos. Cada objeto creado a partir de la clase se denomina instancia de la clase.
+            </p>
+
+            <p>
+                En JavaScript las clases son "funciones especiales", tal y como el caso de las expresiones de funciones y declaraciones de funciones. Existen dos formas de definir una clase, las cuales se ampliarán a continuación:
+            </p>
+
+            <h4>
+                Declaración de clase.
+            </h4>
+
+            <p>
+                Este método de definición de clase implica el uso de la palabra reservada class seguido de un identificador para la clase. Esta definición será efectiva dentro del mismo contexto en el que esté inmerso. La sintaxis es la siguiente:
+            </p>
+
+            <pre>
+                <code class="js">
+    class &lt;identificador&gt;{
+      //definición
+    }
+                </code>
+            </pre>
+
+            <p>
+                A forma de ejemplo tenemos la siguiente declaración de clase, con una instancia de ella:
+            </p>
+
+            <pre>
+                <code class="js">
+    class Player{
+
+      constructor(name, HP){
+        this.name = name;
+        this.HP = HP;
+        this.exp = 0;
+        this.Hab = [];
+      }
+    
+      insertHab(newHab){
+        this.Hab.push(newHab);
+      }
+    
+    }
+    
+    
+    var player1 = new Player("Antal", 300);
+    player1.insertHab("Mutacion");
+                </code>
+            </pre>
+
+            <h4>
+                Expresiones de clases.
+            </h4>
+
+            <p>
+                Este método implica la introducción de clases anonimas, requiriendo el uso solo de la palabra reservada class y opcionalmente el uso de un identificador. Esta expresión debe ser almacenada en alguna variable que será la encargada de instanciar objetos de dicha clase. A continuación se presenta la sintaxis, con el ejemplo anterior reescrito:
+            </p>
+
+            <pre>
+                <code class="js">
+    &lt;identificador&gt; &lt;n_variable&gt; = class [identificador]{
+      //definición
+    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class="js">
+    let Player = class{
+
+      constructor(name, HP){
+        this.name = name;
+        this.HP = HP;
+        this.exp = 0;
+        this.Hab = [];
+      }
+    
+      insertHab(newHab){
+        this.Hab.push(newHab);
+      }
+    
+    }
+    
+    
+    var player1 = new Player("Antal", 300);
+    player1.insertHab("Mutacion");
+                </code>
+            </pre>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes' target = '_blank'>Clases</a>
+            </p>
+        </section>
+
+        <section id="arrays">
+            <h3>
+                Colección de datos.
+            </h3>
+
+            <p>
+                El manejo y almacenamiento de conjuntos de datos es una herramenita indispensable en la lógica de todo programa. Con el fin de dar solución a esta necesidad, JavaScript implemento la clase <strong>Array</strong>. Esto dió apertura a la creación, control y uso de arreglos en los sitios web.
+            </p>
+
+            <p>
+                Las características principales de los arreglos son: Proporcionar un control de datos sencillo y de alto nivel; comportarse de igual forma que las listas dinámicas; tener la capacidad de almacenar elementos de distintos tipos dentro del mismo arreglo; entre otras mas.
+            </p>
+
+            <h4>
+                Declaración
+            </h4>
+
+            <p>
+                Existen diversas formas para inicializar un arreglo en JavaScript. Por su utilidad se estudirán dos: Haciendo uso de la notación de arreglos estándar de JS, y haciendo uso del contructor de la clase <strong>Array</strong>.
+            </p>
+
+            <p>
+                El primer método consiste, literalmente, en asignarle un arreglo a una variable. La sintaxis deriva de encerrar los datos (separados por comas) entre corchetes simples. Algunos ejemplos de este método son:
+            </p>
+
+            <pre>
+                <code class="js">
+    let listNumbers = [1,23,4,5,45,87];
+    let listLetters = ['A','h','e','v','F'];
+    let listColors = ["red","yellow","white","green"];
+                </code>
+            </pre>
+
+            <p>
+                El segundo método se basa en el hecho que un arreglo es una instancia de la clase Array, por lo que puede hacerse uso del constructor de la misma. A partir de ello se puede declarar arreglos de la siguiente forma:
+            </p>
+
+            <pre>
+                <code class="js">
+    let listNumbers = new Array(1,23,4,5,45,87);
+    let listLetters = new Array('A','h','e','v','F');
+    let listMixed = new Array(1,'c',"red",34);
+                </code>
+            </pre>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a W3Schools: <a href='https://www.w3schools.com/js/js_arrays.asp' target = '_blank'>JavaScript Arrays</a>
+            </p>
+
+            <h4>
+                Control de datos.
+            </h4>
+
+            <p>
+                Una de las utilidades mas grandes para el manejo y control de arreglos es que dentro de la clase <strong>Array</strong> se encuentran definidas una serie de propiedades y métodos, que facilitan la manipulación del contenido interno de cada una de sus instancias. A continuación se enumerarán, los atributos, propiedades y métodos mas representativos y útiles para el manejo de arreglos. Para facilitar la enseñanza, todos los ejemplos estarán basados en el siguiente arreglo.
+            </p>
+
+            <pre>
+                <code class="js">
+    let listLetters = ['A','h','e','v','F'];
+                </code>
+            </pre>
+
+            <ul>
+                <li>
+                    <h4>
+                        Acceso por índice a un elemento del arreglo.
+                    </h4>
+                    <p>
+                        Se hace uso de la sintaxis básica de acceso a un elemento dentro un arreglo. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    var firstLetter = listLetters[0];
+    // Almacena 'A'
+    
+    var lastLetter = listLetters[listLetters.lenght - 1];
+    // Almacena 'F'
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .lenght;
+                    </h4>
+                    <p>
+                        Este atributo corresponde a la cantidad de datos que tiene actualmente un arreglo. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    let cantLetters = listLetters.lenght;
+    console.log(cantLetters); //Imprimirá 5.
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .forEach(function);
+                    </h4>
+                    <p>
+                        Método que recorre todos los elementos un arreglo y realiza una función específica por cada uno de ellos. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    listLetters.forEach((letter, index)=>{
+
+      console.log("Letra "+index+": "+letter);
+      //Imprimirá cada valor en la consola
+    
+    });
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .push(value);
+                    </h4>
+                    <p>
+                        Método que añade un elemento al final del arreglo. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    listLetters.push('z');
+    //['A','h','e','v','F','z']
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .pop();
+                    </h4>
+                    <p>
+                        Método que elimina el elemento final del arreglo. Este valor es retornado. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    var lastItem = listLetters.pop(); //Almacena 'z'
+    //['A','h','e','v','F']
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .shift();
+                    </h4>
+                    <p>
+                        Método que elimina el elemento inicial de un arreglo. De igual forma el valor es retornado. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    var firstItem = listLetters.shift(); //Almacena 'A'
+    //['h','e','v','F']
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .unshift();
+                    </h4>
+                    <p>
+                        Método que inserta un nuevo elemento en la primera posición del arreglo. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    listLetters.unshift('x');
+    //['x','h','e','v','F']
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>
+                        .splice(index, n)
+                    </h4>
+                    <p>
+                        Método que elimina una cantidad específica de elementos en un arreglo. Recibe por parametros el índice donde se iniciará a eliminar, y la cantidad de datos a eliminar. Ejemplo:
+                    </p>
+                    <pre>
+                        <code class = 'js'>
+    listLetters.splice(2,1);
+    //['x','h','v','F']
+    
+    listLetters.splice(1,2);
+    //['x','F']
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array' target = '_blank'>Array</a>
+            </p>
+        </section>
+
+        <section id="exercices">
+            <h3>
+                Ejercicios.
+            </h3>
+
+            <p>
+                Realizar los siguientes ejercicios haciendo uso de las herramientas dadas en el laboratorio. Cada ejercicio deberá estar en un archivo .js.
+            </p>
+
+            <ol>
+                <li>
+                    Realice una función que reciba un arreglo como parámetro y liste los tipos de datos de sus elementos y cuantos de cada tipo.
+                </li>
+
+                <li>
+                    Realice una función que reciba un arreglo de datos numéricos, y muestre la suma de todos los elementos del arreglo y su promedio.
+                </li>
+                
+                <li>
+                    Realice una función en JS, que dados un número y un arreglo como parámetros, retorne cuantas ocurrencias existen de ese número dentro del arreglo.
+                </li>
+                
+                <li>
+                    Elabore una función que llene un arreglo con 20 números de forma aleatoria (random), y que pida al usuario adivinar un número, si lo adivina mostrará un mensaje indicando que ganó, si no mostrará que perdió.
+                </li>
+                
+                <li>
+                    Palíndromo: Se dice que una palabra es palíndroma cuando se puede leer de la misma manera tanto de derecha a izquierda y viceversa. Crear una función en JavaScript que reciba como parámetro una palabra. La función debe retornar si la palabra es palíndroma o no.
+                </li>	
+                
+                <li>
+                    Ordenamiento de array: Crear una función en JavaScript que ordene los elementos de un Array en orden ascendente.
+                </li>
+                
+                <li>
+                    Fibonacci: La serie Fibonacci es una serie matemática muy reconocida, la cual tiene como primeros 10 términos: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. Realice una función en JavaScript que reciba un número n como argumento y muestre la serie hasta el enésimo término.
+                </li>
+                
+                <li>
+                    Conversor decimal-binario: Crear una función en JavaScript, que reciba como parámetro un entero positivo. La función debe devolver el valor en binario.
+                </li>
+                
+                <li>
+                    Análisis de una circunferencia: Crear una función en JavaScript que pida por el teclado el radio de un circunferencia, y calcule el área de esta y lo retorne, si el radio ingresado es negativo o cero, retornará -1.
+                </li>
+                
+                <li>
+                    Valor absoluto: Escribir una funcion en JavaScript que, dado un número real cualquiera, encuentre su valor absoluto y lo retorne. El valor absoluto de un número x es igual a x si x > 0, y a -x si x es menor o igual a 0.
+                </li>
+            </ol>
+        </section>
+
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                “No cost too great. No mind to think. No will to break. No voice to cry suffering. Born of God and Void. You shall seal the blinding light that plagues their dreams. You are the Vessel.” 
+            </em></p>
+            
+            <p id="author">
+                The Pale King.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>CSS Básico</title>
+</head>
+<body>
+    <header>
+        <h1>Guía de laboratorio 3.</h1>
+        <p><b>CSS Básico | </b><i>Viernes 31 de agosto de 2018</i></p>
+    </header>
+
+    <nav>
+        <h2>Contenido.</h2>
+        <ul>
+           <li><a href="#intro">Introducción.</a></li>
+           <li><a href="#ejemplo">Ejemplos.</a></li> 
+           <li><a href="#apoyo">Ejercicios con apoyo.</a></li> 
+           <li><a href="#indiv">Ejercicio Individual.</a></li> 
+        </ul>
+    </nav>
+
+    <section>
+        <h2 id="intro">Introducci&oacute;n</h2>
+
+        <p>En esta práctica de laboratorio se estudiarán diversas formas de aplicar estilos a un documento de marcado (como HTML). Sin embargo la presente se centrará en el uso de las hojas de estilo css como principal administrador de dicho cometido.</p>
+
+        <h3>¿Qué es css?</h3>
+
+        <p>Del inglés "Cascading Style Sheets" (Hojas de estilo en cascada), es el estándar utilizado para describir la aparariencia de documentos que derivan de XML, como HTML, XHTML o SVG. CSS determina la manera en como es modelada la información en pantalla. Este está compuesto por una serie de <em>selectores</em> y <em>propiedades</em>, que al juntarlos se establecen las <i>reglas</i>. </p>
+
+        <h3>Propiedades</h3>
+
+        <p>Una propiedad es aquella que define un aspecto especifico del estilo de un elemento este puede ser un color de fondo, una fuente especifica, un margen interior o exterior, entre otros muchos. Por ejemplo si se desea cambiar el color de texto con CSS, se debe declarar el nombre de la propiedad (<em>color</em>) y su valor; la siguiente <em>delcaración</em> de CSS cambiar el color de fuente a rojo:</p>
+        <code>
+            color: red;
+        </code>
+        <p>Las declaraciones se puede agrupar en reglas para poder cambiar varias propiedades a un elemento del documento HTML o XHTML. La sintaxis para agrupar declaraciones es la siguiente:</p>
+
+        <code>
+            selector{ <br>
+            &ensp;prop1: value1; <br>
+            &ensp;prop2: value2; <br>
+            &ensp;prop3: value3; <br>
+            }
+        </code>
+
+        <p>
+            Existen muchas propiedades CSS, de las cuales podrá encontrar referencia en los siguientes enlaces; además encontrará explicaciones precisas de la sintaxis.
+        </p>
+
+        <ul>
+            <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Sintaxis">Sintaxis CSS (MDN)</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Referencia CSS (MDN)</a></li>
+            
+            <li><a target="_blank" href="https://www.w3schools.com/cssref/default.asp">Referencia CSS (W3Schools)</a></li>
+
+        </ul>
+
+        <h3>Selectores</h3>
+
+        <p>Son criterios que permiten seleccionar a que elemento o elementos del documento se aplicarán los cambios de estilo que se indiquen. Con los selectores se puede declarar que el color de la fuente de todos los parrafos del documento sea de color verde, también se puede decir que un elemento específico cambie su tamaño de fuente, entre muchas más cosas. Algunos selectores muy utilies para modificar los aspectos visuales de los elementos son:</p>
+
+        <ul>
+
+            <li>
+                <p>
+                    <strong>Selector por elemento:</strong> Selecciona elementos básicos de la estructura html como <i>body</i> o <i>header</i>, es dicir etiquetas HTML. Este tipo de regla es de gran utilidad para generalizar estilos y realizar plantillas del sitio.
+                </p>
+
+                <p>
+                    Por ejemplo si se quiere generalizar un margen al body de todo el sitio (como es el caso de la presente guía) la estructura de la regla haciendo uso de este selector, sería de la siguiente forma:
+                </p>
+
+                <code>body{<br>
+                &ensp;margin-left:10%;<br>
+                &ensp;margin-right:10%;
+                <br>}</code><br>
+            </li>
+
+            <li>
+                <p>
+                    <strong>Selector por clase:</strong> Este selecciona elementos que han sido marcado con un identificador a traves del atributo <i>class</i>. La sintaxis de este selector es anteceder un punto al nombre de la clase que modificará: <code>.class{/*Definition*/}</code>. Para ejemplificar este selector tomaremos como referencia la siguiente etiqueta:
+                </p>
+                
+                <code>&lt;code class="myCode"&gt;&lt;/code&gt;</code>
+                
+                <p>
+                    Donde el estilo de las etiquetas <code>&lt;code&gt;&lt;/code&gt;</code> ya están definidas por la siguiente regla CSS:
+                </p>
+                
+                <code>
+                    code{<br>
+                    &ensp;color: #2c3e50;<br>
+                    &ensp;font-size:1.2em;
+                    <br>}
+                </code>
+                
+                <p>
+                    Se quiere establecer un estilo particular (texto rojo, centrado y de tamaño 2em) a la etiqueta code con la clase "myCode". La solución al problema es establecer una regla por medio de un selector de clase, de la siguiente forma:
+                </p>
+                
+                <code>
+                    .myCode{<br>
+                    &ensp;display: block;<br>
+                    &ensp;text-align: center;<br>
+                    &ensp;color: #e74c3c;<br>
+                    &ensp;font-size:2em;
+                    <br>}
+                </code>
+                
+                <p>
+                    Generando un resultado en el navegador como el siguiente: 
+                </p>
+                
+                <code class="myCode">Soy un código rojo</code>
+                
+                <p>
+                    Por lo que podemos afirmar que un selector por clase en mas específico que un selector por etiqueta.
+                </p>
+            </li>
+            
+            <li>
+                <p>
+                    <strong>Selector por id:</strong> Estos, a diferencia de los dos selectores anteriores, delimitan sus reglas de estilos a los elementos únicos que han sido definidos con el atributo <i>id</i>. Su sintaxis se basa en anteponer un numeral al identificador del id seleccionado: <code>#id{/*Definition*/}</code>.Este criterio de selección tiene mayor prioridad ante el selector por clase y elemento es decir, es el selector más especifico. 
+                </p>
+                
+                <p>
+                    Se basará en el ejemplo del iniciso anterior, para mostrar las características de este selector, donde la nueva etiqueta (<code>&lt;code class="myCode" id="CodeUnq"&gt;&lt;/code&gt;</code>) estará definida por ambas reglas de estilos previas, tanto de etiqueta como de clase. 
+                </p>
+
+                <p>
+                    En este caso se quiere conservar las definiciones delimitados por el selector de clase, pero se quiere cambiar el color a verde unicamente a esa etiqueta. La solución viene dada por una regla delimitada por un selector de id, definida de la siguiente forma: 
+                </p>
+
+                <code>
+                    #CodeUnq{<br>
+                    &ensp;color: #27ae60;
+                    <br>}
+                </code>
+
+                <p>
+                    Generando el siguiente resultado en el navegador:
+                </p>
+
+                <code class="myCode" id="CodeUnq">Soy un codigo único</code>
+            </li>
+
+        </ul>
+
+        <p>
+            Como se hizo mención previamente, estos no son los únicos selectores que se pueden aplicar a un documento de marcado. Por lo tanto para ampliar el concimiento necesario acerca de selectores y sus combinaciones, se recomienda la lectura de los siguientes enlaces:
+        </p>
+
+        <ul>
+            <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Selectores">Introducción a selecctores (MDN)</a></li>
+
+            <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Selectores_de_Atributos">Selectores de atributos (MDN)</a></li>
+
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Pseudo-clases_y_pseudo-elementos">Pseudo-clases y pseudo-elementos (MDN)</a></li>
+
+            <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Combinaciones_y_selectores_multiples">Combinaciones y selectores múltiples (MDN)</a></li>
+
+            <li><a target="_blank" href="https://www.w3schools.com/css/css_syntax.asp">Sintaxis de CSS y selectores (W3Schools)</a></li>
+
+            <li><a target="_blank" href="https://www.w3schools.com/cssref/css_selectors.asp">Referencia de selectores CSS (W3Schools)</a></li>
+
+        </ul>
+
+        <h3>Practicando.</h3>
+
+        <p>Utilice el siguiente recurso virtual para practicar el uso de selectores: <a target="_blank" href="http://flukeout.github.io/">CSS Diner</a></p>
+    </section>
+
+    <section>
+        <h2 id="ejemplo">Ejemplos.</h2>
+
+        <p>En el presente iniciso se presentan dos ejemplos de situaciones comunes al momento de diseñar un sitio web, por lo que su compresión es importante en el desarrollo del curso.</p>
+
+        <article>
+            <h3>Tablas</h3>
+            <p data-height="450" data-theme-id="dark" data-slug-hash="wEGaLZ" data-default-tab="html,result" data-user="jdalvarenga" data-pen-title="CSS_Example_Table" class="codepen">See the Pen <a target="_blank" href="https://codepen.io/jdalvarenga/pen/wEGaLZ/">CSS_Example_Table</a> by Jaime (<a target="_blank" href="https://codepen.io/jdalvarenga">@jdalvarenga</a>) on <a target="_blank" href="https://codepen.io">CodePen</a>.</p>    
+        </article>
+
+        <article>
+            <h3>Menu navegación</h3>
+            <p data-height="450" data-theme-id="dark" data-slug-hash="aaNvYY" data-default-tab="html,result" data-user="jdalvarenga" data-pen-title="aaNvYY" class="codepen">See the Pen <a target="_blank" href="https://codepen.io/jdalvarenga/pen/aaNvYY/">aaNvYY</a> by Jaime (<a target="_blank" href="https://codepen.io/jdalvarenga">@jdalvarenga</a>) on <a target="_blank" href="https://codepen.io">CodePen</a>.</p>
+        </article>
+    </section>
+
+    <section>
+        <h2 id="apoyo">Ejercicios con apoyo.</h2>
+
+        <h3>Blog CSS.</h3>
+
+        <p>Este ejercicio consiste en, a partir de un documento html previamente dado, completar el archivo CSS con las reglas que cumplan con los requisitos que el mismo plantea.
+        </p>
+
+        <p>El documento HTML y el archivo CSS con las especificaciones de estilo se encuentran en el siguiente enlace: <a href="https://github.com/Nexxtor/programacionWeb/tree/master/laboratorios/03-css_basico/Ejercicios/Blog-CSS" target="_blank">https://github.com/Nexxtor/programacionWeb/tree/master/laboratorios/03-css_basico/Ejercicios/Blog-CSS</a></p>
+
+        <img src="Ejercicios/Blog-CSS/Blog.png" alt="Blog-result" class="img50">
+
+        <h3>Chess CSS.</h3>
+
+        <p>En este ejercicio se prendente ejercitar el uso de tablas y selectores de estado. A continuación se detalla lo que se realizará:
+        </p>
+
+        <ol>
+            <li>Generar a partir del uso de tablas, un tablero de ajedrez convencional. Tomar en cuenta la disposición de colores.</li>
+
+            <li>Colocar dentro de cada celda, con texto (Ej: Torre-Blanca), la pieza que corresponde al instante 0 de juego; es decir cuando no se ha movido ninguna aun. Ver imagen de disposición del tablero</li>
+
+            <li>Estos textos, por defecto estarán invisibles a la vista del usuario. Aplicar las reglas CSS necesarias para lograr este cometido. Sugerencia: Usar div's, p, e investigar acerca de visibility:hidden.</li>
+
+            <li>Cuando el puntero del mouse pase sobre una casilla debera sombrearse con un color rojo rgba(255, 0, 0, 0.5).</li>
+
+            <li>Además, si el puntero pasa sobre una casilla que tenga una pieza, debera mostrar el nombre de la pieza que se encuentra ahí.</li>
+            
+            <li>Añadir una cabecera creativa a la página.</li>
+
+            <li>Dividir el pie de página en tres columnas y agregar:
+                <ul>
+                    <li>Nombre y apellido.</li>
+
+                    <li>Carné.</li>
+
+                    <li>Enlace de su Github.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <img src="Ejercicios/Chess-CSS/assets/img/chess-result.gif" alt="Result" class="img50">
+
+        <p>Puede ver la <a href="Ejercicios/Chess-CSS/index.html">solución al ejercicio</a> en el enlace.</p> 
+
+    </section>
+
+    <section>
+        <h2 id="indiv">Ejercicio individual.</h2>
+
+        <h3>Botones CSS.</h3>
+
+        <p>El siguiente ejercicio consiste en generar una paleta de botones, los cuales estan definidos en la imagen anexa. Se debe considerar la mayor cantidad reglas básicas en el diseño de un boton. Sugerencia: guardar este ejercicio, ya que se hará uso del mismo posteriormente en el curso con la reutilización de las clases.</p>
+
+        <img src="Ejercicios/Botones-CSS/assets/img/botones.png" alt="Bottons" class="img50">
+
+        <p>Puede ver la <a href="Ejercicios/Botones-CSS/index.html">solución al ejercicio</a> en el enlace.</p> 
+
+    </section>
+
+    <section>
+        <h2>Forma de entrega.</h2>
+
+        <p>La forma de entrega será a través de un repositorio en línea (Github). Dentro de este deberán encontrarse tres carpetas con cada uno de los ejercicios; la carpeta deberá nombrarse bajo el siguiente estandar: Ejercicio_&lt;#_ejercicio&gt;. Además deberán de crear un index.html dentro de la raiz del repositorio, que sirva de página principal y enlace a los ejercicios (menú de contenido). Se evalurá la estructura del repositorio y que la página pricipal tenga algún estilo personalizado. </p>
+
+        <img src="img/git_image.png" alt="Ejermplo de estructura" class="img50">
+
+        <h3>Horarios para últimos commits</h3>
+        <ul>
+            <li>Ejercicio 1 y 2: Viernes a la hora de salida de laboratorio. 
+                <ul>
+                    <li>Laboratorio A - 9:00 am.</li>
+                    <li>Laboratorio B - 3:30 pm.</li>
+                    <li>Laboratorio C - 5:30 pm.</li>
+                </ul>
+            </li>
+
+            <li>Ejercicio 3: Lunes a las 11:55 pm.</li>
+
+            <li>index.html principal: Lunes a las 11:55 pm.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        
+    </footer>
+
+    <a href="#" id="HomeBtn"><i class="fas fa-chevron-up"></i></a>
+
+</body>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+</html>

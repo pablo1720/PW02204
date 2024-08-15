@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <title>JS Básico.</title>
+</head>
+
+<body id="id_body">
+
+    <header id="front-img">
+        <div class="main-front">
+            <h1>Laboratorio 05.</h1>
+            <h3>Viernes, 21 de septiembre de 2018.</h3>
+            <i class="fas fa-chevron-down" id="down-button"></i>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introduction-section">Introducción.</a><i class="fas fa-info-circle"></i></li>
+            <li><a href="#variables-section">Variables.</a><i class="fas fa-box-open"></i></li>
+            <li><a href="#sentences-section">Sentencias.</a><i class="fas fa-terminal"></i></li>
+            <li><a href="#functions-section">Funciones.</a><i class="fas fa-superscript"></i></li>
+            <li><a href="#exercices">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
+        </ul>
+    </nav>
+    
+    <header class="title-content" id="title-content">
+        <div id="brand">
+            <h1>JavaScript Básico</h1>
+        </div>
+        <div id="content-brand">
+            <h5>Introducción JavaScript</h5>
+        </div>
+    </header>
+
+    <section class="content">
+        <section id="introduction-section">
+            <header>
+                <h2>¿Qué es JavaScript?</h2>
+            </header>
+            <article>
+                <p>
+                    <strong>JavaScript</strong> es un lenguaje de programación interpretado, de alto nivel y multi-paradigma, que tiene por objetivo brindar dinamismo a los sitios web; no obstante este también es utilizado en entornos y tecnologías como base de su funcionamiento (ej: Node.js). Este lenguaje está basado en el estándar normativo ECMAScript.
+                </p>
+
+                <p>
+                    JavaScript, como ya se mencionó, es multi-paradigma, siendo sus pricipales vertientes la programación funcional, programación imperativa y el paradigma orientado a objetos. La sintaxis básica del mismo es similar a Java y C++, con el fin de minimizar su curva de aprendizaje; sentencias como <em>if</em>, <em>try...catch</em>, <em>for</em>, <em>while</em> y <em>switch</em>, funcionan de forma similar como lo hacen en dichos lenguajes.
+                </p>
+
+                <p>
+                    Las capacidades dinámicas de JavaScript incluyen construcción de objetos en tiempo de ejecución, listas variables de parámetros, variables que pueden contener funciones, creación de scripts dinámicos, introspección de objetos, y recuperación de código fuente [MDN].
+                </p>
+            </article>
+
+            <br>
+            <article class="tip">
+                <p>Lectura complementaria: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Qu%C3%A9_es_JavaScript"> ¿Qué es JavaScript? [MDN]</a></p>
+            </article>
+        </section>
+
+        <section id="introduction-section-pt2">
+            <header>
+                <h2>Primeros pasos.</h2>
+            </header>
+            <article>
+                <p>
+                    Para empezar a hacer uso de esta herramienta, se debe importar o definir el script dentro del documento HTML. Para ello existen diversas formas, entre las cuales se pueden listar:
+                </p>
+                
+                <article>
+                    <h3>Script embebido en las etiquetas.</h3>
+                    
+                    <p>
+                        Como su nombre indica, este método consiste en definir el script dentro de los atributos controladores de eventos de una etiqueta. Cabe mencionar que esto se debe de evitar, a menos que se quiera invocar una función externa en cierto evento específico.
+                    </p>
+
+                    <code>
+                    &lt;span onclick = "alert('Hice click');"&gt; Haz click aqui! &lt;/span&gt;
+                    </code>
+                </article>
+
+                <article>
+                    <h3>Uso de la etiqueta Script.</h3>
+                    
+                    <p>
+                        Dentro de HTML existe una etiqueta específica para la definición de scripts, la cual puede ser embebida en cualquier punto del documento. Esta se ejecutará en el momento en que es definida.
+                    </p>
+
+                    <code>
+                    &lt;script&gt;<br><br>
+                    &ensp;&ensp;//Código JS aquí.<br><br>
+                    &lt;/script&gt; 
+                    </code>
+                </article>
+
+                <article>
+                    <h3>Importar script externo.</h3>
+                    
+                    <p>
+                        Generalmente los scripts son definidos en archivos externos (con extención .js). Para aplicarlos, se debe de hacer uso del atributo src de la etiquta script, donde se delimitará la dirección relativa del archivo.
+                    </p>
+
+                    <code>
+                    &lt;script src="assets/js/javaScript.js"&gt;&lt;/script&gt;
+                    </code>
+                </article>
+
+                <article class="tip">
+                    <h3>Tip, Árbol de directorios.</h3>
+                    <p>
+                        A este punto ya se han abarcado varias temáticas que requieren el uso de archivos externos (CSS y JS), por lo que es recomendable hacer uso de una organización de directorios y archivos para mantener el orden dentro de nuestro sitio web. Por ejemplo:
+                    </p>
+                    <ul>
+                        <li id="rt">root</li>
+                        <ul>
+                            <li class="arch">index.html</li>
+                            <li class="dir">assets</li>
+                            <ul>
+                                <li class="dir">img</li>
+                                <ul>
+                                    <li class="arch">imagen_1.jpg</li>
+                                    <li class="arch">imagen_2.jpg</li>
+                                    <li class="arch">imagen_3.jpg</li>
+                                </ul>
+                            </ul>
+                            <li class="dir">css</li>
+                                <ul>
+                                    <li class="arch">styles.css</li>
+                                    <li class="arch">extras.css</li>
+                                </ul>
+                                <li class="dir">js</li>
+                                <ul>
+                                    <li class="arch">JavaScript.js</li>
+                                    <li class="arch">nav_extra.js</li>
+                                    <li class="arch">player.js</li>
+                                </ul>
+                        </ul>
+                    </ul>
+                </article>
+            </article>
+            <br>
+            <article class="tip">
+                <p>Lectura complementaria: <a href="http://mialtoweb.es/como-incluir-javascript-en-html/"> Como incluir Javascript en HTML [MIALTOWEB]</a></p>
+            </article>
+        </section>
+
+        <section id="variables-section">
+            <header>
+                <h2>Variables.</h2>
+            </header>
+            <article>
+                <p>
+                    En primer lugar, hay que comprender que una variable es un contenedor para algún valor cualquiera a utilizar, como podría ser un número, una cadena de texto, etc. Donde su característica pricipal es que este valor contenido puede cambiar durante el tiempo de ejecución.
+
+                </p>
+
+                <p>
+                    Otra característica importante acerca de las variables, es que ellas no solo almacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dicho lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
+                </p>
+            </article>
+
+            <article>
+                <h3>Declarar una variable.</h3>
+                <p>
+                    Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabras reservadas <em>var</em> o <em>let</em> seguido de un identificador o nombre para la misma.
+                </p>
+                <code>
+                    var birthDate;<br>
+                    let viewHolder;<br>
+                    var contAux;<br>
+                    let progWeb;
+                </code>
+            </article>
+
+            <article>
+                <h3>Inicializar una variable.</h3>
+                <p>
+                    Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico; Si una variable es inicializada sin haber sido definida, se comportará de manera global.
+                </p>
+                <code>
+                    birthDate = '2018-09-21';<br>
+                    contAux = 0;<br>
+                    comp2 = true //Global <br>
+                    progWeb = "Este es el labo 05";
+                </code>
+                <p>
+                    Cabe resaltar que se puede Inicializar una variable mientras la declaramos.
+                </p>
+                <code>
+                    var offsetX= 45;<br>
+                    var offsetY= 12;<br>
+                    var volInit = 2;
+                </code>
+            </article>
+            
+            <article>
+                <h3>Operar variables.</h3>
+                <p>
+                    De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !=), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito. 
+                </p>
+                <code>
+                    offsetX = 54 + posX;<br>
+                    impuestos = valor * 1.13;<br>
+                    total = total + impuestos;<br>
+                    contAux = contAux + 1;<br>
+                    comp2 = aux1 &lt;= aux2;
+                </code>
+            </article>
+
+            <article>
+                <h3>Difrencia entre <em>let</em> y <em>var</em></h3>
+                <p>
+                    La diferencia fundamental entre ambas instruciones, es el alcance que otorgan a las variables. La instrucción <em>let</em> limita el contexto de la variable al bloque, declaración, sentencia o expresión en que se este utilizando. Por ejemplo:
+                </p>
+                <code>
+                    let total = 0; <br>
+                    for(i=0; i&lt;5; i++){ <br><br>
+                    &ensp;&ensp;let sqrtValue = i*i;<br>
+                    &ensp;&ensp;total = total + sqrtValue;<br><br>
+                    }
+                </code>
+                <p>
+                    La variable sqrtValue solamente puede ser accesible desde el contexto encerrado en el bucle <em>for</em>. Si tratamos de acceder a esta fuera de su contexto, será disparado un error. 
+                </p>
+
+                <img src="assets/img/let_error.png" alt="Let error">
+
+                <p>
+                    Por su parte la instrucción <em>var</em> limita la variable a un contexto local dentro de una función sin importar el contexto particular del bloque o sentencia en la que se esté utilizando. Aplicando el mismo ejemplo anterior con <em>var</em>:
+                </p>
+                <code>
+                    let total = 0; <br>
+                    for(i=0; i&lt;5; i++){ <br><br>
+                    &ensp;&ensp;var sqrtValue = i*i;<br>
+                    &ensp;&ensp;total = total + sqrtValue;<br><br>
+                    }
+                </code>
+
+                <p>
+                    Ahora la variable sqrtValue pertence al contexto de la función y no al bloque <em>for</em>, por lo que facilmente se puede acceder a ella desde otro contexto dentro de la misma función.
+                </p>
+
+                <img src="assets/img/var_ex.png" alt="var_example">
+            </article>
+
+            <article class="tip">
+                <h3>Tip, Nombres de variables.</h3>
+                <p>
+                    A la hora de elegir un identificador para las variables se debe de garantizar que este cumpla su función de la mejor manera. Para ello se recomeinda seguir los siguientes estándares: 
+                </p>
+                <ul class="list">
+                    <li>Ultilizar solamente carateres alfanuméricos (A-Z a-z 0-9) y el guión bajo.</li>
+                    <li>Evitar guión bajo al inicio del identificador. Está reservado en JS.</li>
+                    <li>No inciar el identificador con un número. Causará error.</li>
+                    <li>Usar nombres representativos para las variables, según el contenido que almacenan.</li>
+                    <li>Usar minuscula en la primera letra. Si es una composición de varias palabras, escribirlas juntas y aplicar mayúsculas a las primeras letras de cada una (Ej: contAux).</li>
+                    <li>Tener preacución ya que los identificadores son "key-sensitive".</li>
+                    <li>No utilizar palabras reservadas como identificadores.</li>
+                </ul>
+
+                <ul class="good">
+                    <li>myVariable</li>
+                    <li>age</li>
+                    <li>init</li>
+                    <li>gameInit4</li>
+                    <li>cont_aux</li>
+                </ul>
+
+                <ul class="wrong">
+                    <li>MyAge</li>
+                    <li>myage</li>
+                    <li>99var</li>
+                    <li>_initvar</li>
+                    <li>let</li>
+                </ul>
+            </article>
+            <br>
+            <article class="tip">
+                <p>Lectura complementaria: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables"> Storing the information you need — Variables [MDN]</a></p>
+            </article>
+        </section>
+
+        <section id="sentences-section">
+            <header>
+                <h2>Sentencias.</h2>
+            </header>
+            <article>
+                <p>
+                    Como se mecionó previamente, la sintaxis de JavaScript es muy parecida a la de lenguajes de programación comunes, por lo que es natural pensar que la mayoría de sus sentencias son iguales. A continuación se presenta la sintaxis de las mas utilizadas:
+                </p>
+
+                <div class="sentences-container">
+                    <div>
+                        <p>
+                            if(condition){<br>
+                            &ensp;&ensp;//Code Block <br>
+                            }else{ <br>
+                            &ensp;&ensp;//Code Block. <br>
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            switch(variable){<br>
+                            &ensp;&ensp;case value1: <br> 
+                            &ensp;&ensp;&ensp;&ensp;//Code Block <br>
+                            &ensp;&ensp;&ensp;&ensp;break; <br>
+                            &ensp;&ensp;default: <br>
+                            &ensp;&ensp;&ensp;&ensp;//Code Block <br>
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            for(i=0; i&lt;n; i++){ <br>
+                            &ensp;&ensp;//Code Block <br>
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            while(condition){<br>
+                            &ensp;&ensp;//Code Block <br>
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            try{ <br>
+                            &ensp;&ensp;//Code Block <br>
+                            }catch(err){ <br>
+                            &ensp;&ensp;//Code Block <br>
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            do{<br>
+                            &ensp;&ensp;//Code Block <br>
+                            }while(condition);
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="functions-section">
+            <header>
+                <h2>Funciones</h2>
+            </header>
+            <article>
+                <p>
+                    En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el llamado cuerpo de la función. Se pueden pasar valores a una función, y la función puede devolver un valor. [MDN]
+                </p>
+                <p>
+                    En JavaScript existen diversas formas de declarar una función, entre las que figuran:
+                </p>
+            </article>
+            
+            <article>
+                <h3>La instrucción function</h3>
+                <p>
+                    Esta instrucción declara una función con un identificador y parámetros específicos. Posee la siguiente sintaxis:
+                </p>
+                <code>
+                    function &lt;name&gt; ([Param1,[Param2,[Param3[,...]]]]){ <br><br>
+                    &ensp;&ensp;//instructions <br><br>
+                    }
+                </code>
+            </article>
+            
+            <article>
+                <h3>El operador function</h3>
+                <p>
+                    Este operador es parecido a la instrucción anterior, con la diferencia que este es utilizado para declarar funciones dentro de expresiones, es decir ser almacendas en variables o procesos mayores. Su sintaxis es la siguiente:
+                </p>
+                <code>
+                    function [name] ([Param1,[Param2,[Param3[,...]]]]){ <br><br>
+                    &ensp;&ensp;//instructions <br><br>
+                    }
+                </code>
+                <p>Ejemplos:</p>
+                <code>
+                    var procesoA =  function (i,j){ <br>
+                    &ensp;&ensp;return i*j; <br>
+                    }
+                </code>
+                <br>
+                <code>
+                    elementX.onclick(function (i,j){ <br>
+                    &ensp;&ensp;return (i*j)/(i); <br>
+                    });
+                </code>
+            </article>
+
+            <article>
+                <h3>La notación flecha.</h3>
+                <p>
+                    Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue implementada a partir de ECMAScript 6. 
+                </p>
+                <code>
+                        ([Param1,[Param2[,...]]]) => {<br><br>
+                        &ensp;&ensp;//instructions <br><br>
+                        }
+                </code>
+                <p>Aplicando esta notación a los ejemplos anteriores:</p>
+                <code>
+                        var procesoA = (i,j) => { <br>
+                        &ensp;&ensp;return i*j; <br>
+                        }
+                    </code>
+                    <br>
+                    <code>
+                        elementX.onclick((i,j) => { <br>
+                        &ensp;&ensp;return (i*j)/(i); <br>
+                        });
+                    </code>
+            </article>
+
+            <article class="tip">
+                <p>
+                    Lecturas complementarias: 
+                </p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones"> Funciones [MDN]</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function"> Instrucción funtion [MDN]</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/function"> Operador funtion [MDN]</a></li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="exercices">
+            <header>
+                <h2>Ejercicios</h2>
+            </header>
+            <article>
+                <p>
+                    Realizar los siguientes ejercicios haciendo uso de las herramientas dadas en el laboratorio. La forma de entrega será vía git, cuyo repositorio tendrá un archivo .js por cada uno de los ejercicios. Cada archivo tendrá como nombre Ejercicio_n.js donde n es el numeral del ejercicio.
+                </p>
+                <p>
+                    El repositorio debera tener por nombre Laboratorio_05_&lt;carné&gt;. La hora de entrega será antes de finalizar cada laboratorio.
+                </p>
+            </article>
+            <article>
+                <h3>Lista</h3>
+                <ol>
+                    <li><strong>Palíndromo</strong>: Se dice que una palabra es palíndroma cuando se puede leer de la misma manera tanto de derecha a izquierda y viceversa. Crear una función en JavaScript que reciba como parámetro una palabra. La función debe retornar si la palabra es palíndroma o no.</li>
+
+                    <li><strong>Ordenamiento de array</strong>: Crear una función en JavaScript que ordene los elementos de un Array en orden ascendente.</li>
+
+                    <li><strong>Fibonacci</strong>: La serie Fibonacci es una serie matemática muy reconocida, la cual tiene como primeros 10 términos: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. Realice una función en JavaScript que reciba un número n como argumento y muestre la serie hasta el enésimo término.</li>
+
+                    <li><strong>Conversor decimal-binario</strong>: Crear una función en JavaScript, que reciba como parámetro un entero positivo. La función debe devolver el valor en binario.</li>
+
+                    <li><strong>Análisis de una circunferencia</strong>: Crear una función en JavaScript que pida por el teclado el radio de un circunferencia, y  calcule el área de esta y lo retorne, si el radio ingresado es negativo o cero, retornará -1.</li>
+
+                    <li><strong>Valor absoluto</strong>: Escribir una funcion en JavaScript que, dado un número real cualquiera, encuentre su valor absoluto y lo retorne. El valor absoluto de un número x es igual a x si x > 0, y a -x si x es menor o igual a 0.</li>
+
+                    <li><strong>Bisiesto</strong>: Crear una función en javaScript que dado un año en específico retorne si este es bisiesto o no.</li>
+
+                </ol>
+            </article>
+        </section>
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+<script src="assets/js/javaScript.js"></script>
+</html>
