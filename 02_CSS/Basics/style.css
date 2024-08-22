@@ -1,0 +1,40 @@
+* {
+  color: white;
+}
+
+body {
+  background-image: url(https://moderndrummer.com/wp-content/uploads/Ludwig-Classic-Maple-kit.jpg);
+}
+
+#title {
+  color: #a020f0;
+}
+
+#titlePt2 {
+  color: #80daeb;
+}
+
+#celda {
+  background: #4d5354;
+  border: 4px solid #111;
+}
+
+#enlace {
+  color: rgb(47, 227, 255);
+  font-size:xx-large;
+  font-style: oblique;
+}
+
+#item3 {
+  color: greenyellow;
+}
+
+#item4 {
+  color: greenyellow;
+  font-weight: 200px;
+
+}
+
+footer{
+  font-style: italic;
+}
