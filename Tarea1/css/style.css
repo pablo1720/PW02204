@@ -1,11 +1,48 @@
-#prof-pic{
-    width: 17%;
-    height: 17%;
-    border: 10px double gray;
+body {
+  background-color: #3956539d;
+  padding: 5px;
+}
 
+#prof-pic {
+  width: 10%;
+  height: 10%;
+  border: 10px double rgb(16, 16, 16);
+}
+
+#personal-data {
+  border: solid 1px #000;
+  width: 550px;
+  height: 60px;
+  text-align: left;
+}
+
+#table-menu {
+  border: solid 1px #000;
+  width: 300px;
+  height: 70px;
+  text-align: center;
+}
+
+#table-studies {
+    border: solid 1px #000;
+    width: 750px;
+    height: 100px;
+  }
+
+table {
+  border: solid 1px #000;
+  width: 300px;
+  height: 60px;
+}
+
+footer {
+  font-style: italic;
+}
+
+a {
+  color: #19155c;
+  text-decoration: none;
+  text-decoration: underline;
 }
 
 
-footer{
-    font-style: italic;
-}
