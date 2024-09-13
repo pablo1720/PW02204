@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Bluetooth Speaker - Features</title>
+    <link rel="stylesheet" href="/Parcial 01/features.css">
+</head>
+<body>
+    <header>
+        <h1>Awesome Bluetooth Speaker - Features</h1>
+    </header>
+    <main>
+        <div class="features">
+            <div class="feature-card">
+                <img src="" alt="Long Battery Life">
+                <h3>Long Battery Life</h3>
+                <p>Up to 20 hours of playtime on a single charge.</p>
+                <button class="learn-more-btn" onclick="openModal('battery')">Learn More</button>
+            </div>
+            <div class="feature-card">
+                <img src="" alt="Water Resistant">
+                <h3>Water Resistant</h3>
+                <p>IPX7 rated for worry-free outdoor use.</p>
+                <button class="learn-more-btn" onclick="openModal('water')">Learn More</button>
+            </div>
+            <div class="feature-card">
+                <img src="" alt="Powerful Sound">
+                <h3>Powerful Sound</h3>
+                <p>Dual drivers and passive radiators for immersive audio.</p>
+                <button class="learn-more-btn" onclick="openModal('sound')">Learn More</button>
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Awesome Bluetooth Speaker. All rights reserved.</p>
+    </footer>
+    <script src="/Parcial 01/features.js"></script>
+</body>
+</html>
